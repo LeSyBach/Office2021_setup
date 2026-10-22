@@ -8,6 +8,7 @@ Office LTSC 2021 đã hết hỗ trợ ngày **13/10/2026**: phần mềm vẫn 
 
 ## Thư mục có gì?
 
+- `Cai-Office2021.bat`: bấm đúp để tự yêu cầu quyền quản trị và chạy bộ cài.
 - `setup.exe`: Office Deployment Tool có chữ ký Microsoft.
 - `Configuration.xml`: cấu hình Office 2021, đã điền khóa MAK do chủ repo cung cấp và bật thử kích hoạt tự động.
 - `officedeploymenttool_19725-20126.exe`: gói giải nén công cụ ban đầu, không cần mở lại khi đã có `setup.exe`.
@@ -15,24 +16,29 @@ Office LTSC 2021 đã hết hỗ trợ ngày **13/10/2026**: phần mềm vẫn 
 
 Gói này chưa chứa dữ liệu cài Office đầy đủ. Máy nhận vẫn cần Internet để tải Office từ Microsoft và thực hiện kích hoạt.
 
-## Cách cài trên máy nhận
+## Cách cài bằng một tệp BAT
 
-1. Tải repo bằng **Code → Download ZIP**, rồi giải nén ZIP. Nếu nhận thư mục đã giải nén qua USB thì không cần bước này.
-2. Chép các tệp sao cho `setup.exe` và `Configuration.xml` nằm trực tiếp trong `C:\Office2021`.
-3. Lưu tài liệu, đóng Word, Excel và các ứng dụng Office. Nếu đã có Office khác, kiểm tra khả năng xung đột và giấy phép trước khi gỡ bản cũ.
-4. Mở Start, gõ **cmd**, chọn **Run as administrator**.
-5. Chạy lần lượt:
+1. Tải bằng **Code → Download ZIP** rồi **giải nén toàn bộ**. Không chạy BAT ngay trong cửa sổ xem ZIP.
+2. Giữ `Cai-Office2021.bat`, `setup.exe` và `Configuration.xml` trong cùng thư mục. Có thể để thư mục ở ổ C, D hoặc vị trí khác; không bắt buộc chép vào `C:\Office2021`.
+3. Lưu tài liệu và đóng các ứng dụng Office.
+4. Bấm đúp **`Cai-Office2021.bat`**. Khi Windows hỏi quyền quản trị, chọn **Yes**; nhập thông tin tài khoản quản trị nếu được yêu cầu.
+5. Chờ bộ cài tải và cài Office. Nếu bộ cài hiện điều khoản hoặc thông báo cần xử lý, hãy đọc và thao tác theo nội dung hiển thị.
+6. Khi hoàn tất, mở **Word → File → Account** để kiểm tra **Product Activated**. Nếu được báo cần khởi động lại, lưu công việc rồi tự khởi động lại Windows.
+
+BAT tự tìm bộ cài và cấu hình trong thư mục chứa nó. Nếu thiếu tệp, bị từ chối quyền quản trị hoặc cài lỗi, cửa sổ sẽ hiện thông báo. Các thông báo trong BAT dùng tiếng Anh để tránh lỗi dấu trên Command Prompt.
+
+**Máy vẫn cần Internet.** BAT thực hiện cài Office 2021 theo cấu hình đã có; không tự chuyển sang Office 2024. Cấu hình có `<RemoveMSI />`, nên có thể gỡ các bản Office cũ dùng bộ cài MSI; nếu đang có Office khác, kiểm tra khả năng xung đột và giấy phép trước khi chạy.
+
+Cấu hình đã có khóa MAK và bật thử kích hoạt tự động. Cài đặt thành công không bảo đảm kích hoạt thành công; kết quả còn phụ thuộc vào khóa và giấy phép của máy nhận.
+
+### Chạy thủ công nếu cần
+
+Mở Command Prompt bằng **Run as administrator**, vào đúng thư mục bộ cài, ví dụ:
 
 ```cmd
 cd /d C:\Office2021
 setup.exe /configure Configuration.xml
 ```
-
-Lệnh trên thực hiện cài đặt và có thể thay đổi Office đang có. Cấu hình có `<RemoveMSI />`, vì vậy có thể gỡ các bản Office cũ dùng bộ cài MSI.
-
-6. Chờ cài xong, mở Word → **File → Account**, kiểm tra **Product Activated**.
-
-Không cần chạy lại tệp giải nén Office Deployment Tool. Cấu hình đã có khóa, nhưng kích hoạt thành công còn phụ thuộc vào tính hợp lệ của khóa, hạn mức và giấy phép được cấp cho máy nhận.
 
 ## Kiểm tra kích hoạt
 
