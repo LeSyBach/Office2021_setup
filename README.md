@@ -16,6 +16,35 @@ Office LTSC 2021 đã hết hỗ trợ ngày **13/10/2026**: phần mềm vẫn 
 
 Gói này chưa chứa dữ liệu cài Office đầy đủ. Máy nhận vẫn cần Internet để tải Office từ Microsoft và thực hiện kích hoạt.
 
+## Tạo hoặc chỉnh sửa Configuration.xml
+
+Bạn có thể tạo cấu hình bằng công cụ chính thức **Office Customization Tool**:
+
+[https://config.office.com/deploymentsettings](https://config.office.com/deploymentsettings)
+
+Chọn các mục sau:
+
+1. **Products and releases** → **Office LTSC Professional Plus 2021**.
+2. **Architecture** → chọn **64-bit** (hoặc chọn 32-bit nếu máy cần tương thích với ứng dụng 32-bit).
+3. **Update channel** → **PerpetualVL2021**.
+4. **Apps** → chọn các ứng dụng cần cài, hoặc bỏ chọn ứng dụng không dùng.
+5. **Language** → chọn ngôn ngữ, ví dụ `en-us` hoặc `vi-vn`.
+6. **Installation and update** → bật cập nhật nếu muốn nhận bản cập nhật từ Office CDN.
+7. **Licensing and activation** → chọn **MAK** chỉ khi bạn có khóa MAK hợp lệ và được phép sử dụng. Không dán khóa vào cấu hình rồi đưa lên repo công khai.
+8. Chọn **Export**, đặt tên `Configuration.xml`, rồi chép tệp xuất ra cùng thư mục với `setup.exe`.
+
+Sau khi tạo xong, kiểm tra XML có các phần chính tương tự:
+
+```xml
+<Add OfficeClientEdition="64" Channel="PerpetualVL2021">
+  <Product ID="ProPlus2021Volume">
+    <Language ID="en-us" />
+  </Product>
+</Add>
+```
+
+Nếu dùng `Cai-Office2021.bat`, hãy giữ đúng tên `Configuration.xml` và đặt cạnh file BAT. Cấu hình mới sẽ thay thế cấu hình cũ khi bạn chạy bộ cài. Office Customization Tool chỉ tạo tệp cấu hình; bộ cài vẫn cần `setup.exe` của Office Deployment Tool.
+
 ## Cách cài bằng một tệp BAT
 
 1. Tải bằng **Code → Download ZIP** rồi **giải nén toàn bộ**. Không chạy BAT ngay trong cửa sổ xem ZIP.
