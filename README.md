@@ -1,6 +1,6 @@
 # Office LTSC Professional Plus 2021 — bộ cài riêng tư
 
-Cài Word, Excel và PowerPoint 64-bit, giao diện tiếng Anh bằng Office Deployment Tool của Microsoft.
+Cài Word, Excel và PowerPoint 64-bit, giao diện tiếng Anh và tiếng Việt bằng Office Deployment Tool của Microsoft.
 
 > Gói này chứa khóa MAK trong `Configuration.xml`. Chỉ lưu trong repo **Private** và chỉ cấp quyền cho người được phép dùng giấy phép. Số lượt kích hoạt không phải số giấy phép được quyền chia sẻ.
 
@@ -28,7 +28,7 @@ Chọn các mục sau:
 2. **Architecture** → chọn **64-bit** (hoặc chọn 32-bit nếu máy cần tương thích với ứng dụng 32-bit).
 3. **Update channel** → **PerpetualVL2021**.
 4. **Apps** → chọn các ứng dụng cần cài, hoặc bỏ chọn ứng dụng không dùng.
-5. **Language** → chọn ngôn ngữ, ví dụ `en-us` hoặc `vi-vn`.
+5. **Language** → chọn `en-us` và `vi-vn` để cài cả tiếng Anh và tiếng Việt.
 6. **Installation and update** → bật cập nhật nếu muốn nhận bản cập nhật từ Office CDN.
 7. **Licensing and activation** → chọn **MAK** chỉ khi bạn có khóa MAK hợp lệ và được phép sử dụng. Không dán khóa vào cấu hình rồi đưa lên repo công khai.
 8. Chọn **Export**, đặt tên `Configuration.xml`, rồi chép tệp xuất ra cùng thư mục với `setup.exe`.
@@ -39,6 +39,7 @@ Sau khi tạo xong, kiểm tra XML có các phần chính tương tự:
 <Add OfficeClientEdition="64" Channel="PerpetualVL2021">
   <Product ID="ProPlus2021Volume">
     <Language ID="en-us" />
+    <Language ID="vi-vn" />
   </Product>
 </Add>
 ```
