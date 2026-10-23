@@ -2,7 +2,7 @@
 
 Cài Word, Excel và PowerPoint 64-bit, giao diện tiếng Anh và tiếng Việt bằng Office Deployment Tool của Microsoft.
 
-> Gói này chứa khóa MAK trong `Configuration.xml`. Chỉ lưu trong repo **Private** và chỉ cấp quyền cho người được phép dùng giấy phép. Số lượt kích hoạt không phải số giấy phép được quyền chia sẻ.
+> Gói này chứa khóa MAK trong `Configuration.xml`. 
 
 Office LTSC 2021 đã hết hỗ trợ ngày **13/10/2026**: phần mềm vẫn có thể chạy nhưng không còn cập nhật bảo mật. [Thông báo Microsoft](https://learn.microsoft.com/en-us/lifecycle/announcements/office-ltsc-2021-end-of-support).
 
