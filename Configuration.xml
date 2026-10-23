@@ -2,6 +2,7 @@
   <Add OfficeClientEdition="64" Channel="PerpetualVL2021">
     <Product ID="ProPlus2021Volume" PIDKEY="D3YWG-KN47B-8M79R-F374V-G6R2X">
       <Language ID="en-us" />
+      <Language ID="vi-vn" />
       <ExcludeApp ID="Access" />
       <ExcludeApp ID="Lync" />
       <ExcludeApp ID="OneDrive" />
